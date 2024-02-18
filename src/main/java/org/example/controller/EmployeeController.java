@@ -2,8 +2,9 @@ package org.example.controller;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.example.persons.Director;
-import org.example.repository.DirectorRepository;
+import org.example.persons.Employee;
+import org.example.persons.Level;
+import org.example.repository.EmployeeRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,15 +18,15 @@ import java.util.List;
 
 @Controller
 @RequiredArgsConstructor
-@RequestMapping("/directors")
+@RequestMapping("/employees")
 @Slf4j
-public class DirectorController {
-    private final DirectorRepository directorRepository;
+public class EmployeeController {
+    private final EmployeeRepository employeeRepository;
 
     @GetMapping
     public ModelAndView showAll(ModelAndView model) {
-        List<Director> directors = directorRepository.findAll();
-        model.addObject("directors", directors);
+        List<Employee> employees = employeeRepository.findAll();
+        model.addObject("employees", employees);
         model.setViewName("list");
         return model;
     }
@@ -33,20 +34,20 @@ public class DirectorController {
     @GetMapping("/create")
     public ModelAndView showCreate(ModelAndView modelAndView) {
         modelAndView.setViewName("create");
-        Director director = new Director();
-        modelAndView.addObject(director);
-        //modelAndView.addObject("priorities", Priority.values());
+        Employee employee = new Employee();
+        modelAndView.addObject(employee);
+        modelAndView.addObject("priorities", Level.values());
         return modelAndView;
     }
 
     @PostMapping("/create")
-    public String create(@ModelAttribute @Valid Director director,
+    public String create(@ModelAttribute @Valid Employee employee,
                          BindingResult bindingResult) {
-        log.info("#director " + director);
+        log.info("#employee " + employee);
         if (bindingResult.hasErrors()) {
             return "create";
         }
-        directorRepository.create(director);
-        return "redirect:/directors";
+        employeeRepository.create(employee);
+        return "redirect:/employees";
     }
 }

@@ -1,15 +1,13 @@
 package org.example.persons;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
 @Data
-
+@AllArgsConstructor
+@NoArgsConstructor
 public class Employee {
     @NonNull
     private int id;
