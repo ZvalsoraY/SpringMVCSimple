@@ -25,13 +25,13 @@ public class AppConfig implements WebMvcConfigurer {
         this.applicationContext = applicationContext;
     }
 
-    @Override
+    /*@Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         WebMvcConfigurer.super.addResourceHandlers(registry);
         registry.addResourceHandler("/images/**").addResourceLocations("/images/");
         registry.addResourceHandler("/css/**").addResourceLocations("/css/");
         registry.addResourceHandler("/js/**").addResourceLocations("/js/");
-    }
+    }*/
 
     @Bean
     public SpringResourceTemplateResolver htmlTemplateResolver() {

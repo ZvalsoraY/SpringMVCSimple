@@ -26,13 +26,13 @@ public class DirectorController {
     public ModelAndView showAll(ModelAndView model) {
         List<Director> directors = directorRepository.findAll();
         model.addObject("directors", directors);
-        model.setViewName("list");
+        model.setViewName("listDirector");
         return model;
     }
 
     @GetMapping("/create")
     public ModelAndView showCreate(ModelAndView modelAndView) {
-        modelAndView.setViewName("create");
+        modelAndView.setViewName("createDirector");
         Director director = new Director();
         modelAndView.addObject(director);
         //modelAndView.addObject("priorities", Priority.values());

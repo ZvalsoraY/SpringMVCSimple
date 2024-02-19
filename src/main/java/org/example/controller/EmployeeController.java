@@ -27,13 +27,13 @@ public class EmployeeController {
     public ModelAndView showAll(ModelAndView model) {
         List<Employee> employees = employeeRepository.findAll();
         model.addObject("employees", employees);
-        model.setViewName("list");
+        model.setViewName("listEmployee");
         return model;
     }
 
     @GetMapping("/create")
     public ModelAndView showCreate(ModelAndView modelAndView) {
-        modelAndView.setViewName("create");
+        modelAndView.setViewName("createEmployee");
         Employee employee = new Employee();
         modelAndView.addObject(employee);
         modelAndView.addObject("priorities", Level.values());
