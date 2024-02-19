@@ -12,7 +12,7 @@ import java.util.Optional;
 @Repository
 @AllArgsConstructor
 public class EmployeeRepositoryImplementation implements EmployeeRepository {
-    private final EmployeeRepository employeeRepository;
+    //private final EmployeeRepository employeeRepository;
     private final Database database;
 
     @Override

@@ -13,7 +13,7 @@ import java.util.Optional;
 @Repository
 @AllArgsConstructor
 public class DirectorRepositoryImplementation implements DirectorRepository {
-    private final DirectorRepository directorRepository;
+    //private final DirectorRepository directorRepository;
     private final Database database;
 
     @Override
