@@ -31,19 +31,19 @@ public class EmployeeController {
         return model;
     }
 
-    @GetMapping("/create")
+    @GetMapping("/createEmployee")
     public ModelAndView showCreate(ModelAndView modelAndView) {
         modelAndView.setViewName("createEmployee");
         Employee employee = new Employee();
         modelAndView.addObject(employee);
-        modelAndView.addObject("priorities", Level.values());
+        modelAndView.addObject("levels", Level.values());
         return modelAndView;
     }
 
-    @PostMapping("/create")
+    @PostMapping("/createEmployee")
     public String create(@ModelAttribute @Valid Employee employee,
                          BindingResult bindingResult) {
-        log.info("#employee " + employee);
+        log.info("#createEmployee " + employee);
         if (bindingResult.hasErrors()) {
             return "create";
         }
