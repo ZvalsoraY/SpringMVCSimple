@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>Employees</title>
+    <meta charset="UTF-8">
+    <title>Employees</title>
 </head>
 <body>
 <h1>Employees list</h1>
 <table>
-  <thead>
-  <tr>
-    <th>ID</th>
-    <th>Name</th>
-    <th>Grade</th>
-  </tr>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Grade</th>
+    </tr>
   </thead>
   <tbody>
-    <tr th:each="employee: ${employees}">
-      <td th:text="${employee.id}">id</td>
-      <td th:text="${employee.name}">name</td>
-      <td th:text="${task.level.value}">level</td>
-    </tr>
+      <tr th:each="employee: ${employees}">
+          <td th:text="${employee.id}">id</td>
+          <td th:text="${employee.name}">name</td>
+          <td th:text="${employee.level.value}">level</td>
+      </tr>
   </tbody>
 </table>
 </body>

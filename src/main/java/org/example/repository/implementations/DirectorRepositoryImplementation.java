@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import org.example.database.Database;
 import org.example.persons.Director;
 import org.example.repository.DirectorRepository;
+import org.example.repository.EmployeeRepository;
 import org.springframework.stereotype.Repository;
 
 
@@ -14,6 +15,7 @@ import java.util.Optional;
 @AllArgsConstructor
 public class DirectorRepositoryImplementation implements DirectorRepository {
     //private final DirectorRepository directorRepository;
+    private final EmployeeRepository employeeRepository;
     private final Database database;
 
     @Override
