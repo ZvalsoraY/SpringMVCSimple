@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>New employee</title>
+</head>
+<body>
+<form th:action="@{/employee}" th:method="POST" th:object="${employee}">
+    <label>Enter name: </label>
+    <div>
+        <input type="text" th:name="name" th:field="*{name}">
+        <!--<span style="color: red;"
+              th:if="${#fields.hasErrors('name')}"
+              th:errors="*{name}"
+        >
+              &lt;!&ndash;th:text="${#fields.errors('title')}"&ndash;&gt;
+            Error message!
+        </span>-->
+    </div>
+    <label>Select level: </label>
+    <div>
+        <select th:field="*{level}">
+            <option th:each="level: ${levels}"
+                    th:text="${level.value}"
+                    th:value="${level}">
+                Level</option>
+        </select>
+    </div>
+    <button type="submit">Create!</button>
+</form>
+</body>
+</html>

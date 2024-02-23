@@ -19,9 +19,14 @@
           <td th:text="${employee.id}">id</td>
           <td th:text="${employee.name}">name</td>
           <td th:text="${employee.level.value}">level</td>
+
+          <td>
+              <a th:href="@{/employee/{id}(id=${employee.getId()})}">details</a>
+          </td>
+
       </tr>
   </tbody>
 </table>
-<a href="/employees/createEmployee">Create employee</a>
+<a href="/employee/newEmployee">Create employee</a>
 </body>
 </html>
